@@ -44,9 +44,15 @@ This page is the developer / homepage for the Chrome Web Store listing. Source w
 
 ## Privacy
 
+**Chrome Web Store privacy policy:**  
+https://github.com/markusvankempen/chrome-stanzaclock/blob/main/PRIVACY.md
+
 - **Permission:** `storage` only — plate, colour, size, and effect settings
 - **No network** — the system clock is the only time source
 - **No accounts, no analytics**
+- The developer does not collect or receive user data. Settings stay in Chrome on your devices.
+
+Full text: [PRIVACY.md](PRIVACY.md)
 
 ---
 
