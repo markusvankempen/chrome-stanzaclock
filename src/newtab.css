@@ -1,0 +1,92 @@
+/*
+ * Full-window new-tab face. Deliberately bare: the matrix, the phrase, and a
+ * settings gear that only shows on hover.
+ */
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #05080f;
+  color: #e8eef8;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+#stage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2.2vh, 26px);
+}
+
+/* ------------------------------------------------------------ the matrix */
+
+.matrix {
+  display: grid;
+  grid-template-columns: repeat(var(--n, 8), var(--cell, 34px));
+  gap: var(--gap, 4px);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.matrix i {
+  width: var(--cell, 34px);
+  height: var(--cell, 34px);
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-weight: 700;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: var(--letter, 20px);
+  line-height: 1;
+  color: #2a3250;
+  border-radius: 3px;
+  transition: color .5s, text-shadow .5s;
+  user-select: none;
+}
+
+.matrix.grid i { background: #0a0e18; }
+.matrix.dim i { color: #1b2338; }
+
+/* -------------------------------------------------------------- readouts */
+
+.words {
+  margin: 0;
+  max-width: 90vw;
+  text-align: center;
+  font-weight: 600;
+  font-size: clamp(.8rem, 1.7vh, 1.15rem);
+  letter-spacing: .22em;
+  color: #8a97b4;
+}
+
+.digital {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1rem, 2.4vh, 1.5rem);
+  letter-spacing: .06em;
+  color: #6a7693;
+}
+
+[hidden] { display: none !important; }
+
+/* ------------------------------------------------------------ the gear */
+
+.gear {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  font-size: 20px;
+  line-height: 1;
+  color: #3a4463;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+body:hover .gear { opacity: 1; }
+.gear:hover { color: #e8eef8; }

@@ -1,0 +1,13 @@
+{
+  "name": "chrome-stanzaclock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Stanza Clock: 8x8 and 16x16 word clock for the Chrome new tab. By Markus Van Kempen.",
+  "scripts": {
+    "test": "node test/verify.mjs",
+    "dev": "python3 -m http.server 8777",
+    "pack": "bash tools/pack.sh",
+    "icons": "python3 tools/make-icons.py"
+  }
+}

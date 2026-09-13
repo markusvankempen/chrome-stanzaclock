@@ -1,0 +1,263 @@
+/* Full-window settings page. Shares colour tokens with popup.css. */
+
+html, body {
+  height: 100%;
+}
+
+body.options {
+  width: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 28px 8px;
+}
+
+.top h1 {
+  font-size: 1.35rem;
+  margin: 0 0 4px;
+}
+
+.top .sub {
+  color: var(--muted);
+  font-size: .85rem;
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--edge);
+}
+
+.tabs button {
+  appearance: none;
+  padding: 11px 16px 10px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  color: var(--text);
+}
+
+.tabs button[aria-selected="true"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(340px, 1fr) minmax(320px, min(46vw, 640px));
+  gap: 28px;
+  padding: 22px 28px 28px;
+  min-height: 0;
+}
+
+.panes {
+  min-width: 0;
+  overflow: auto;
+}
+
+.pane {
+  min-width: 0;
+}
+
+.pane[hidden] {
+  display: none;
+}
+
+.pane h2 {
+  font-size: .95rem;
+  margin: 0 0 12px;
+}
+
+.pane .sub {
+  color: var(--muted);
+  font-size: .85rem;
+  margin: -4px 0 14px;
+}
+
+.group + .group {
+  margin-top: 22px;
+}
+
+.group h3 {
+  margin: 0 0 8px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.plates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.plates button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--edge);
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.plates button:hover {
+  border-color: #3d5588;
+}
+
+.plates button.on {
+  border-color: var(--accent);
+  background: #12283f;
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.plates .name {
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+.plates .meta {
+  font-size: .72rem;
+  color: var(--muted);
+}
+
+.plates .sample {
+  margin-top: 2px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: .68rem;
+  letter-spacing: .04em;
+  color: #7d8eab;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.controls.cols-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 22px;
+  align-items: start;
+}
+
+.danger {
+  margin-top: 22px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 0;
+  background: #8a2030;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.preview-pane {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--edge);
+  background: var(--panel);
+}
+
+.preview-pane h2 {
+  margin: 0 0 12px;
+  font-size: .95rem;
+}
+
+.matrix.preview {
+  width: 100%;
+  padding: 10px;
+}
+
+.matrix.preview i {
+  font-size: clamp(8px, calc((min(46vw, 600px) - 48px) / var(--n, 8) * 0.55), 28px);
+}
+
+.preview-pane .words {
+  margin: 12px 0 10px;
+}
+
+.about {
+  max-width: 560px;
+}
+
+.about .name {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.about p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.about .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 16px 0;
+  font-size: .85rem;
+}
+
+.about a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.about a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 880px) {
+  .top, .tabs, .workspace {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-pane {
+    position: static;
+    order: -1;
+  }
+
+  .matrix.preview i {
+    font-size: clamp(8px, calc((100vw - 64px) / var(--n, 8) * 0.5), 22px);
+  }
+}

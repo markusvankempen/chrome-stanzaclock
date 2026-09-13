@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Word Clock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="digital" id="digital">--:--</span>
+      <select id="plate" title="Letter plate"></select>
+    </header>
+
+    <div class="matrix" id="matrix"></div>
+
+    <p class="words" id="words"></p>
+
+    <div class="controls">
+      <label>
+        <span>Colour</span>
+        <select id="colorMode"></select>
+      </label>
+      <label id="solidWrap" hidden>
+        <span>Solid colour</span>
+        <input type="color" id="solid">
+      </label>
+      <label>
+        <span>Brightness <b id="brightVal">40</b></span>
+        <input type="range" id="brightness" min="1" max="80">
+      </label>
+      <label class="row">
+        <input type="checkbox" id="minDots">
+        <span>Minute dots (show the 1-4 leftover minutes)</span>
+      </label>
+      <label>
+        <span>Seconds effect</span>
+        <select id="secFx"></select>
+      </label>
+      <label class="row">
+        <input type="checkbox" id="clock24">
+        <span>24-hour digital readout</span>
+      </label>
+      <label>
+        <span>Freeze at (HH:MM, blank follows the clock)</span>
+        <input type="text" id="override" placeholder="e.g. 14:35" maxlength="5">
+      </label>
+    </div>
+
+    <footer>
+      <span id="plateTitle"></span>
+      <a href="newtab.html" target="_blank" id="openFull">Full screen</a>
+      <a href="https://github.com/markusvankempen/chrome-stanzaclock" target="_blank" rel="noopener" id="openSite">Website</a>
+      <a href="#" id="openOptions">Settings</a>
+    </footer>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
