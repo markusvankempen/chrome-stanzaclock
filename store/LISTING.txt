@@ -1,0 +1,154 @@
+================================================================================
+IMAGES  (chrome-stanzaclock/store/)
+All PNG, 24-bit RGB, no alpha. Exact Chrome sizes.
+
+Global screenshots (1280x800) — upload in this order:
+  screenshot-1-8x8.png       8x8 new tab — TEN PAST TEN
+  screenshot-2-16x16.png     16x16 exact minute
+  screenshot-3-faces.png     Settings — letter plates
+  screenshot-4-look.png      Settings — colour and look
+  screenshot-5-de16.png      German 16x16 — ES IST HALB ZEHN
+
+Small promo tile (440x280):
+  promo-small-440x280.png
+
+Marquee promo tile (1400x560):
+  promo-marquee-1400x560.png
+
+Regenerate from the raw captures with:
+  python3 tools/make-store-assets.py
+
+================================================================================
+CHROME WEB STORE — paste-ready copy
+================================================================================
+
+NAME
+Stanza Clock
+
+SHORT DESCRIPTION  (max 132 characters — already in the package)
+A word clock for your new tab — 8×8 and 16×16 letter plates that light the words for the current time.
+
+CATEGORY
+Productivity
+
+LANGUAGE
+English (default). Also localized: Deutsch, Français, Español, Italiano, Nederlands, Português.
+
+HOMEPAGE
+https://github.com/markusvankempen/chrome-stanzaclock
+
+PRIVACY POLICY  (Chrome Web Store field)
+https://github.com/markusvankempen/chrome-stanzaclock/blob/main/PRIVACY.md
+
+SUPPORT
+https://markusvankempen.github.io/
+
+SINGLE PURPOSE
+Display the current time as a word clock on the new tab page.
+
+PERMISSION JUSTIFICATION
+storage — saves your letter plate, colours, and display settings. Nothing is sent to a server. The clock runs entirely on your computer.
+
+
+--------------------------------------------------------------------------------
+DETAILED DESCRIPTION  (paste into the store listing)
+--------------------------------------------------------------------------------
+
+Stanza Clock replaces Chrome’s new tab with a letter matrix that lights the words for the current time — the same idea as a physical word clock on a desk.
+
+IT IS QUARTER PAST NINE.
+THE TIME IS TWENTY THREE MINUTES TO TEN IN THE MORNING.
+ES IST HALB ZEHN.
+IL EST DIX HEURES MOINS LE QUART.
+
+Eighteen letter plates
+
+• English 8×8 — three layouts (Home, ATWENTYD, TWFIFTHA), five-minute resolution
+• English 16×16 — exact minute, reading-order exact, or five-minute with a fuller sentence
+• German, French, Spanish, Italian, Dutch, and Portuguese — both 8×8 and 16×16 plates
+
+Each language counts time the way speakers actually say it. German and Dutch count against the half hour (HALB ZEHN is half past nine). French puts the hour first. Spanish, Italian, and Portuguese agree the article with the hour (ES LA UNA, SON LAS DOS).
+
+Factory default: EN 8×8 TWFIFTHA, solid colour, spoken phrase, digital time matched to the letter size. Reset to factory defaults from Look or About.
+
+Look
+
+• Hour hue — the colour shifts through the day
+• Solid colour — pick any colour
+• Rainbow — hue varies per letter
+• Rainbow cycle — hue spins over time
+• Warm white
+• Black & white — with an optional invert for black letters on a light page
+• Letter separator colour — the unused letters between the words
+• Brightness, cell backgrounds, and night dimming on a schedule
+• Reading colours for minutes / TO-PAST / hour / time of day
+
+Motion & display
+
+Four independent groups (seconds indicator and matrix ambience combine; phrase transitions and display modes are separate):
+
+• Seconds indicator — frame dot, frame sector, 16×16 bar, hopping tick, or blinking star
+• Matrix ambience — pulse, trail, or sparkle on unused cells
+• Phrase transition — split-flap or board wipe when the spoken phrase changes
+• Display mode — word clock, full-matrix digital, scrolling message, symbol, or large seconds readout
+
+Minute dots on five-minute plates show leftover 1–4 minutes as extra lit cells.
+
+Speaking clock
+
+British Amy MP3s, German Deutsch-Zeitansage WAVs, or the browser computer voice — all follow the lit face, not the raw clock. Schedule: off, on open, hourly, quarter-hourly, or every minute. Speak now for an immediate reading. Audio plays locally from bundled clips; nothing is streamed.
+
+Also included
+
+• Toolbar popup with a live face and quick controls
+• Full-window settings (Face, Clock, Look, New tab, About) with a live preview
+• Fit-to-window or a fixed cell size; letter font, letter size, box gap
+• Clock left / center / right; stacked phrase; digital position and font size
+• Timezone override and a freeze-at time for screenshots
+• Interface language can follow the browser or be set by hand
+• Factory reset with confirmation
+
+Privacy
+
+Stanza Clock uses the storage permission only. It does not collect accounts, browsing history, or analytics. It does not phone home. Your settings stay in Chrome sync (or on this computer).
+
+Companion hardware
+
+The three English 8×8 plates match Markus Van Kempen’s open-source ESP-WordClock8x8 — an 8×8 WS2812 word clock for ESP32-S3, ESP32, and ESP8266.
+
+Hardware: https://github.com/markusvankempen/ESP-WordClock8x8
+Extension site: https://github.com/markusvankempen/chrome-stanzaclock
+Portfolio: https://markusvankempen.github.io/
+
+Made in Toronto by Markus Van Kempen.
+
+
+--------------------------------------------------------------------------------
+SINGLE PURPOSE  (reviewer form)
+--------------------------------------------------------------------------------
+
+Display the current time as a word clock on the new tab page. The toolbar popup and options page only change how that clock looks (letter plate, colour, size). No other browsing features.
+
+
+--------------------------------------------------------------------------------
+PERMISSION JUSTIFICATION  (reviewer form)
+--------------------------------------------------------------------------------
+
+storage
+Used only to save the user’s clock preferences on this device (and Chrome sync, if they use it): letter plate, colours, brightness, seconds effect, timezone, and new-tab layout. The extension does not read browsing history, cookies, or page content. It does not send stored data to any server. No other permissions are requested.
+
+
+--------------------------------------------------------------------------------
+TEST INSTRUCTIONS  (reviewer form)
+--------------------------------------------------------------------------------
+
+1. Install the extension. Open a new tab. A letter matrix should fill the page and light the words for the current time (for example TEN PAST TEN).
+2. Click the toolbar icon. Confirm the same clock in the popup. Change Colour (try Warm white, then Black & white) and Brightness. The new tab should update to match.
+3. Open Settings from the popup (or right-click the icon → Options). On the Face tab, pick EN 16×16 exact minute, then a language plate such as DE 16×16 or DE 8×8. The live preview and the next new tab should show that plate.
+4. On the Look tab, set Letter separators to a visible colour and turn Dim the unlit letters on. Try Motion & display: set Seconds indicator to Frame dot and Matrix ambience to Pulse. Use Reset to factory defaults if needed (Look or About).
+5. On the Clock tab, set Speaking clock → Voice to British, then click Speak now. You should hear Amy read the lit time. Switch to Computer voice to hear the browser speak the phrase.
+6. On the New tab tab, toggle Show the spoken phrase and Digital time. Open a new tab and confirm layout. Try Match letter size for the digital clock.
+7. Close Chrome and reopen a new tab. The last plate and colours should still be there (this is what the storage permission is for).
+8. Optional: Settings → Clock → Freeze at 10:10. The face should read TEN PAST TEN (8×8 English) so the time is easy to check.
+
+The extension has no account, no website login, and no remote API. Everything runs locally.

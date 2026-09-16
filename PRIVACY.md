@@ -1,6 +1,6 @@
 # Privacy policy — Stanza Clock
 
-**Last updated:** 13 September 2026
+**Last updated:** 16 September 2026
 
 This policy applies to the **Stanza Clock** Chrome extension by Markus Van Kempen.
 
@@ -19,18 +19,23 @@ The only permission requested is **`storage`**.
 Stanza Clock saves your clock preferences locally (and in [Chrome Sync](https://support.google.com/chrome/answer/185277) if you have sync turned on):
 
 - letter plate and language
-- colours, brightness, and seconds effect
+- colours, brightness, motion effects, and display mode
+- speaking-clock voice and schedule
 - new-tab size, timezone, and night-dim schedule
 - other display toggles (phrase, grid, invert, and similar)
 
 Those values never leave your browser except through **Google Chrome Sync**, which you control in Chrome’s own settings. The developer cannot see them.
+
+## Speaking clock audio
+
+When you enable the speaking clock, the extension plays **bundled audio files** (British Amy MP3s and German Zeitansage WAVs) or the browser’s built-in speech engine for the computer voice. Playback is entirely local — no audio is uploaded or streamed to a server.
 
 ## What we do not do
 
 - No accounts or sign-in
 - No ads
 - No remote code
-- No network requests for time, weather, or updates
+- No network requests for time, weather, updates, or speaking-clock clips
 - No host permissions
 - Time comes from the clock already on your computer
 

@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://github.com/markusvankempen/ESP-WordClock8x8"><img src="https://img.shields.io/badge/companion-ESP--WordClock8x8-0ea5e9" alt="ESP-WordClock8x8"></a>
   <img src="https://img.shields.io/badge/chrome-Manifest%20V3-4285F4" alt="Manifest V3">
-  <img src="https://img.shields.io/badge/faces-12%20plates-16c060" alt="12 plates">
+  <img src="https://img.shields.io/badge/faces-18%20plates-16c060" alt="18 plates">
   <img src="https://img.shields.io/badge/languages-EN%20DE%20FR%20ES%20IT%20NL%20PT-lightgrey" alt="Languages">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT"></a>
 </p>
@@ -26,8 +26,9 @@ The three English 8×8 plates are cell-for-cell matches of the firmware in **[ES
 | Project | [ESP-WordClock8x8](https://github.com/markusvankempen/ESP-WordClock8x8) | Stanza Clock |
 | Surface | 8×8 WS2812 behind a stencil | New tab + popup |
 | 8×8 faces | Home, ATWENTYD, TWFIFTHA | Same three, same pixels |
-| Extra faces | Custom 8×8 editor on the device | 16×16 English, German, French, Spanish, Italian, Dutch, Portuguese |
-| Seconds | Pulse, trail, tick, sparkle, star | Same effects, plus dots, split-flap, and board wipe |
+| Extra faces | Custom 8×8 editor on the device | 18 plates — English 8×8/16×16 plus 8×8 and 16×16 for DE, FR, ES, IT, NL, PT |
+| Seconds | Pulse, trail, tick, sparkle, star | Indicator + ambience (combinable), phrase transitions, display modes |
+| Voice | — | Speaking clock: British Amy, German Zeitansage, or computer voice |
 | Config | `http://wordclock8x8.local` | Options page + toolbar |
 
 ---
@@ -48,6 +49,7 @@ A clean, simple first look (also restored by **Reset to factory defaults**):
 | Spoken phrase | On |
 | Digital time | On, under the plate, **matched to letter size** |
 | Seconds effect | Off |
+| Speaking clock | Off (British / German / computer voice, on demand) |
 | Night dimming | Off |
 
 Reset lives on the **Look** tab and again on **About → Factory reset**. It asks for confirmation, then clears every setting.
@@ -61,8 +63,9 @@ Reset lives on the **Look** tab and again on **About → Factory reset**. It ask
 | Home | 8×8 | 5 minutes | `TWENTY HALF PAST ONE` |
 | ATWENTYD | 8×8 | 5 minutes | `QUARTER PAST NINE` |
 | EN08 TWFIFTHA | 8×8 | 5 minutes | `FIFTEEN PAST ONE` |
+| DE / FR / ES / IT / NL / PT 8×8 | 8×8 | 5 minutes | Same wording as the 16×16 plate of that language |
 | EN16 exact | 16×16 | every minute | `THE TIME IS TWENTY THREE MINUTES TO TEN IN THE MORNING` |
-| EN16 reading order | 16×16 | every minute | Same wording; hours sit below TO/PAST so the grid reads top to bottom |
+| EN16 reading order | 16×16 | every minute | Same wording; minutes, TO/PAST, hours, then O’CLOCK and the day part, top to bottom |
 | EN16 five minute | 16×16 | 5 minutes | `IT IS QUARTER PAST NINE IN THE MORNING` |
 | DE16 | 16×16 | 5 minutes | `ES IST HALB ZEHN` |
 | FR16 | 16×16 | 5 minutes | `IL EST DIX HEURES MOINS LE QUART` |
@@ -71,7 +74,7 @@ Reset lives on the **Look** tab and again on **About → Factory reset**. It ask
 | NL16 | 16×16 | 5 minutes | `HET IS HALF TIEN` |
 | PT16 | 16×16 | 5 minutes | `SÃO NOVE HORAS E MEIA` |
 
-The 8×8 plates match [ESP-WordClock8x8](https://github.com/markusvankempen/ESP-WordClock8x8). The 16×16 plates are original layouts for this extension.
+The English 8×8 plates match [ESP-WordClock8x8](https://github.com/markusvankempen/ESP-WordClock8x8). The language 8×8 plates and all 16×16 plates are original layouts for this extension.
 
 Non-English faces are not translations of the English one. Each language counts time differently:
 
@@ -83,33 +86,41 @@ Non-English faces are not translations of the English one. Each language counts 
 
 ## Look & layout
 
-Colour modes match the firmware: hour hue, solid, rainbow, warm white, and black & white (with optional invert).
+Colour modes match the firmware: hour hue, solid, rainbow, **rainbow cycle** (hue spins over time), warm white, and black & white (with optional invert).
 
 **Reading colours** tint minutes, TO/PAST, the hour, and time of day so packed 16×16 plates stay readable top to bottom.
 
-**New tab layout**
+**New tab layout** (New tab tab)
 
 - Clock left / center / right
 - Spoken phrase on or off; stack words top to bottom
 - Digital time: under / above the plate, left / center / right of the phrase, or a screen corner
 - Digital font size: match the matrix letters, or set pixels by hand
 - Letter font, letter size (% of cell), and box gap
+- Fit-to-window or fixed cell size
 
-Seconds effects:
+**Motion & display** (Look tab) — four groups, like Multilayout. Seconds indicator and matrix ambience can run together; phrase transitions and display modes are separate.
 
-| Effect | What it does |
+| Group | Options |
 | --- | --- |
-| Off | Words only |
-| Dots | 16×16 bottom-row seconds bar |
-| Star | Unused `*` (or leftover dots) blink each second |
-| Pulse | Lit words breathe |
-| Trail | Unused cells fill across the minute |
-| Tick | One unused cell hops each second |
-| Sparkle | Unused letters twinkle |
-| Split-flap | Changing letters flip like an airport board |
-| Board wipe | Rows clear, then letters roll A–Z |
+| **Seconds indicator** (one at a time) | Off · frame dot · frame sector · 16×16 bar · hopping tick · blinking star |
+| **Matrix ambience** (combines with indicator) | Off · pulse · trail · sparkle |
+| **Phrase transition** | Off · split-flap · board wipe (flap speed 1–10) |
+| **Display mode** | Word clock · full-matrix digital · scrolling message · symbol · large seconds |
 
-Flap speed (1–10) controls split-flap and board wipe.
+Each animated group has its own colour; motion brightness controls indicator and ambience strength. **Minute dots** on five-minute plates light leftover 1–4 minutes as extra cells.
+
+**Speaking clock** (Clock tab, or the toolbar popup)
+
+| Voice | Source |
+| --- | --- |
+| **British** | Amy MP3s bundled in the extension (“the time is … three … thirty five … PM”) |
+| **German** | [Deutsch-Zeitansage](sounds/Speaking-Clock/Deutsch-Zeitansage) WAVs (“Beim nächsten Ton ist es … 9 Uhr … 30 Minuten”) |
+| **Computer** | Browser speech of the lit phrase (`FIFTEEN PAST ONE`, `HALB ZEHN`) |
+
+The reading follows the **face**, not the raw clock. A five-minute plate at 1:13 lights QUARTER PAST ONE, so the clips say “one fifteen”. An exact-minute 16×16 spells every minute, so they say “one thirteen”. With minute dots on, the plate floors instead: 1:13 shows TEN PAST ONE plus three dots, and the clips say “one ten”.
+
+Schedule: off, when the page opens, on the hour (with the third-stroke chime), every quarter hour, or every minute. **Speak now** plays the current reading immediately.
 
 ---
 
@@ -170,16 +181,35 @@ New plates appear in the popup and options lists automatically.
 
 ## Publish
 
-1. Bump `version` in `manifest.json` (and `package.json`)
-2. `npm test && npm run pack`
-3. Upload `dist/stanza-clock-<version>.zip` in the [Chrome Web Store developer dashboard](https://chrome.google.com/webstore/devconsole)
-4. Store screenshots and promo tiles: [`store/`](store/) — see [`store/LISTING.txt`](store/LISTING.txt)
+Current version: **1.0.0** — see [CHANGELOG.md](CHANGELOG.md).
+
+### Build the upload zip
+
+```sh
+cd chrome-stanzaclock
+npm test && npm run pack
+# → dist/stanza-clock-1.0.0.zip
+```
+
+The pack script ships `manifest.json`, `icons/`, `src/`, `_locales/`, and the speaking-clock audio folders (`British-Amy`, `Deutsch-Zeitansage`). It deliberately omits dev files (`test/`, `tools/`, extra sound archives, `package.json`).
+
+### Chrome Web Store
+
+1. Open the [developer dashboard](https://chrome.google.com/webstore/devconsole) → **Stanza Clock** → **Package** → **Upload new package**.
+2. Upload `dist/stanza-clock-<version>.zip`.
+3. **Store listing** — paste copy from [`store/LISTING.txt`](store/LISTING.txt); screenshots and promo tiles live in [`store/`](store/).
+4. **Privacy** — `https://github.com/markusvankempen/chrome-stanzaclock/blob/main/PRIVACY.md`
+5. **What's new** (suggested for 1.0.0):
+
+   > First stable release. 18 letter plates, speaking clock (British Amy, German Zeitansage, computer voice), motion & display effects, display modes, and refreshed settings UI.
+
+6. **Submit for review**. Updates usually pass within a few days; first publish can take longer.
+
+Start **unlisted** if you only need it on your own machines.
 
 **Homepage / developer page:** [github.com/markusvankempen/chrome-stanzaclock](https://github.com/markusvankempen/chrome-stanzaclock)  
 **Hardware companion:** [github.com/markusvankempen/ESP-WordClock8x8](https://github.com/markusvankempen/ESP-WordClock8x8)  
 **Author:** [github.com/markusvankempen](https://github.com/markusvankempen) · [markusvankempen.github.io](https://markusvankempen.github.io/)
-
-Start **unlisted** if you only need it on your own machines.
 
 ---
 
