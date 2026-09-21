@@ -136,80 +136,21 @@ https://github.com/markusvankempen/chrome-stanzaclock/blob/main/PRIVACY.md
 
 Full text: [PRIVACY.md](PRIVACY.md) · [privacy.html](privacy.html)
 
-Store listing copy for each language lives in [`_locales/`](_locales) (name + short description) and is what Chrome shows in the Web Store.
+Store listing copy lives in the Chrome Web Store listing.
 
 ---
 
-## Load unpacked
+## Get the extension
 
-1. Open `chrome://extensions`
-2. Turn on **Developer mode**
-3. **Load unpacked** → this `chrome-stanzaclock` folder
-4. Open a new tab (Chrome may ask to keep the override)
+Current version: **1.1.0** — see [CHANGELOG.md](CHANGELOG.md) and the [v1.1.0 release](https://github.com/markusvankempen/chrome-stanzaclock/releases/tag/v1.1.0).
 
-The options page uses the full window: **Face**, **Clock**, **Look**, **New tab**, and **About**, with a live preview on the right.
-
----
-
-## Develop
-
-```sh
-npm test          # walk every minute on every plate
-npm run dev       # http://127.0.0.1:8777/src/newtab.html
-                  #                         /src/popup.html
-                  #                         /src/options.html
-npm run pack      # dist/stanza-clock-<version>.zip
-```
-
-`npm test` checks that each plate is a square letter grid, every word’s cells actually spell that word, every minute of the day resolves, and phrasing spot-checks pass in all seven languages.
-
-Settings fall back to `localStorage` when `chrome.*` is missing, so the preview server and the real extension share one codebase.
-
-### Adding a face
-
-A plate declares its wording next to its letters.
-
-- `mode: 'slots'` — nearest five minutes (`src/faces.js`)
-- `mode: 'exact'` — every individual minute
-- `mode: 'lang'` — the plate’s own `compose()` in `src/langs.js`
-- `seconds: true` — bottom-row seconds bar
-- `spell` — expected spellings for the test
-
-New plates appear in the popup and options lists automatically.
-
----
-
-## Publish
-
-Current version: **1.0.0** — see [CHANGELOG.md](CHANGELOG.md).
-
-### Build the upload zip
-
-```sh
-cd chrome-stanzaclock
-npm test && npm run pack
-# → dist/stanza-clock-1.0.0.zip
-```
-
-The pack script ships `manifest.json`, `icons/`, `src/`, `_locales/`, and the speaking-clock audio folders (`British-Amy`, `Deutsch-Zeitansage`). It deliberately omits dev files (`test/`, `tools/`, extra sound archives, `package.json`).
-
-### Chrome Web Store
-
-1. Open the [developer dashboard](https://chrome.google.com/webstore/devconsole) → **Stanza Clock** → **Package** → **Upload new package**.
-2. Upload `dist/stanza-clock-<version>.zip`.
-3. **Store listing** — paste copy from [`store/LISTING.txt`](store/LISTING.txt); screenshots and promo tiles live in [`store/`](store/).
-4. **Privacy** — `https://github.com/markusvankempen/chrome-stanzaclock/blob/main/PRIVACY.md`
-5. **What's new** (suggested for 1.0.0):
-
-   > First stable release. 18 letter plates, speaking clock (British Amy, German Zeitansage, computer voice), motion & display effects, display modes, and refreshed settings UI.
-
-6. **Submit for review**. Updates usually pass within a few days; first publish can take longer.
-
-Start **unlisted** if you only need it on your own machines.
+Install from the [Chrome Web Store](https://chrome.google.com/webstore) when the listing is live. This public repository is the homepage, privacy policy, and store assets — not the extension source.
 
 **Homepage / developer page:** [github.com/markusvankempen/chrome-stanzaclock](https://github.com/markusvankempen/chrome-stanzaclock)  
 **Hardware companion:** [github.com/markusvankempen/ESP-WordClock8x8](https://github.com/markusvankempen/ESP-WordClock8x8)  
 **Author:** [github.com/markusvankempen](https://github.com/markusvankempen) · [markusvankempen.github.io](https://markusvankempen.github.io/)
+
+Store listing copy is in [`store/LISTING.txt`](store/LISTING.txt); screenshots and promo tiles live in [`store/`](store/).
 
 ---
 
