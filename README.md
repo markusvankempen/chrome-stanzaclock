@@ -10,11 +10,22 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/markusvankempen/chrome-stanzaclock/releases/latest"><img src="https://img.shields.io/github/v/release/markusvankempen/chrome-stanzaclock?label=release&color=16c060" alt="Latest release"></a>
   <a href="https://github.com/markusvankempen/ESP-WordClock8x8"><img src="https://img.shields.io/badge/companion-ESP--WordClock8x8-0ea5e9" alt="ESP-WordClock8x8"></a>
   <img src="https://img.shields.io/badge/chrome-Manifest%20V3-4285F4" alt="Manifest V3">
-  <img src="https://img.shields.io/badge/faces-18%20plates-16c060" alt="18 plates">
-  <img src="https://img.shields.io/badge/languages-EN%20DE%20FR%20ES%20IT%20NL%20PT-lightgrey" alt="Languages">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT"></a>
+  <img src="https://img.shields.io/badge/plates-18%20faces-16c060" alt="18 plates">
+  <img src="https://img.shields.io/badge/languages-EN%20%C2%B7%20DE%20%C2%B7%20FR%20%C2%B7%20ES%20%C2%B7%20IT%20%C2%B7%20NL%20%C2%B7%20PT-555555" alt="Languages">
+  <a href="PRIVACY.md"><img src="https://img.shields.io/badge/privacy-local%20only-6f42c1" alt="Privacy: local only"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/markusvankempen/chrome-stanzaclock" alt="MIT license"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/chrome--extension-0969da" alt="chrome-extension">
+  <img src="https://img.shields.io/badge/new--tab-0969da" alt="new-tab">
+  <img src="https://img.shields.io/badge/word--clock-0969da" alt="word-clock">
+  <img src="https://img.shields.io/badge/speaking--clock-0969da" alt="speaking-clock">
+  <img src="https://img.shields.io/badge/split--flap-0969da" alt="split-flap">
+  <img src="https://img.shields.io/badge/multilingual-0969da" alt="multilingual">
 </p>
 
 Stanza Clock replaces Chrome’s new tab with an 8×8 or 16×16 letter matrix. The same face is in the toolbar popup. Settings live on a full-window options page with a live preview.
