@@ -25,8 +25,8 @@ CHROME WEB STORE — paste-ready copy
 NAME
 Stanza Clock
 
-SHORT DESCRIPTION  (max 132 characters — already in the package)
-A word clock for your new tab — 8×8 and 16×16 letter plates that light the words for the current time.
+SHORT DESCRIPTION  (max 132 characters — already in the package, 98 used)
+Stanza Clock 1.2.0 — the new word clock. 8×8 and 16×16 letter plates light the words for the time.
 
 CATEGORY
 Productivity
@@ -53,6 +53,8 @@ storage — saves your letter plate, colours, and display settings. Nothing is s
 --------------------------------------------------------------------------------
 DETAILED DESCRIPTION  (paste into the store listing)
 --------------------------------------------------------------------------------
+
+This package is Stanza Clock 1.2.0, the new word clock. The version is in the short description so it is easy to tell apart from the other clock published under the same name.
 
 Stanza Clock replaces Chrome’s new tab with a letter matrix that lights the words for the current time — the same idea as a physical word clock on a desk.
 
@@ -89,7 +91,7 @@ Four independent groups (seconds indicator and matrix ambience combine; phrase t
 
 • Seconds indicator — frame dot, frame sector, 16×16 bar, hopping tick, or blinking star
 • Matrix ambience — pulse, trail, or sparkle on unused cells
-• Phrase transition — split-flap or board wipe when the spoken phrase changes
+• Phrase transition — split-flap or board wipe when the spoken phrase changes, with optional flap sound (Classic or Wipe)
 • Display mode — word clock, full-matrix digital, scrolling message, symbol, or large seconds readout
 
 Minute dots on five-minute plates show leftover 1–4 minutes as extra lit cells.

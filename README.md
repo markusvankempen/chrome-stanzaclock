@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>A word clock for your new tab.</strong><br>
+  <strong>Stanza Clock 1.2.0 — the new word clock.</strong><br>
   Letter plates light the words for the current time — on screen, the same way the hardware clock does on LEDs.
 </p>
 
@@ -27,6 +27,8 @@
   <img src="https://img.shields.io/badge/split--flap-0969da" alt="split-flap">
   <img src="https://img.shields.io/badge/multilingual-0969da" alt="multilingual">
 </p>
+
+The store package is **Stanza Clock 1.2.0 — the new word clock.** The version is in the short description Chrome shows under the name, so this listing is easy to tell apart from the other clock published under the same name.
 
 Stanza Clock replaces Chrome’s new tab with an 8×8 or 16×16 letter matrix. The same face is in the toolbar popup. Settings live on a full-window options page with a live preview.
 
@@ -153,7 +155,7 @@ Store listing copy lives in the Chrome Web Store listing.
 
 ## Get the extension
 
-Current version: **1.1.0** — see [CHANGELOG.md](CHANGELOG.md) and the [v1.1.0 release](https://github.com/markusvankempen/chrome-stanzaclock/releases/tag/v1.1.0).
+Current version: **1.2.0** — see [CHANGELOG.md](CHANGELOG.md) and the [v1.2.0 release](https://github.com/markusvankempen/chrome-stanzaclock/releases/tag/v1.2.0). The upload zip is `stanza-clock-1.2.0.zip`. Its package description is: “Stanza Clock 1.2.0 — the new word clock. 8×8 and 16×16 letter plates light the words for the time.”
 
 Install from the [Chrome Web Store](https://chrome.google.com/webstore) when the listing is live. This public repository is the homepage, privacy policy, and store assets — not the extension source.
 
